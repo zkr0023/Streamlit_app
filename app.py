@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import sklearn
+import joblib
 from sklearn.model_selection import train_test_split
 
 
@@ -24,6 +25,8 @@ col_names = ['total_rooms','total_bedrooms','population', 'households']
 rooms_id, bedrooms_id, population_id, households_id = [
     housing.columns.get_loc(c) for c in col_names]
 # print(rooms_id, bedrooms_id, population_id, households_id ) 
+
+
 
 
 from sklearn.base import BaseEstimator, TransformerMixin
@@ -76,4 +79,5 @@ full_pipeline = ColumnTransformer([
 
 full_pipeline.fit(X_train)
 
+model = joblib.load("Decision_tree_regressor.joblib")
 
