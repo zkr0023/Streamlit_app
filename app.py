@@ -1,4 +1,8 @@
 import streamlit as st
+import pandas as pd
+import sklearn
+from sklearn.model_selection import train_test_split
+
 
 st.header('California App Predictions')
 st.write("""
@@ -6,15 +10,12 @@ This app predicts the **California House Price**!
 """)
 st.write('---')
 
-import pandas as pd
 
 housing = pd.read_csv('housing.csv')
 housing
 
 X = housing.drop('median_house_value', axis=1)
 y = housing['median_house_value']
-
-from sklearn.model_selection import train_test_split
 
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=42)
