@@ -79,7 +79,7 @@ full_pipeline = ColumnTransformer([
 ])
 
 full_pipeline.fit(X_train)
-
+print(housing.shape)
 model = joblib.load("Decision_tree_regressor.joblib")
 
 
