@@ -1,3 +1,7 @@
 import streamlit as st
 
-st.write('California App Prediction')
+st.header('California App Predictions')
+st.write("""
+This app predicts the **California House Price**!
+""")
+st.write('---')
