@@ -14,7 +14,6 @@ st.write('---')
 
 
 housing = pd.read_csv('housing.csv')
-housing
 
 X = housing.drop('median_house_value', axis=1)
 y = housing['median_house_value']
@@ -162,3 +161,10 @@ def user_input_features():
 
 df = user_input_features()
 df
+
+X_test = full_pipeline.transform(df)
+y_pred = model.predict(X_test)
+
+st.header('Your dream house would cost approximately:')
+st.write(final_predictions)
+st.write('---')
