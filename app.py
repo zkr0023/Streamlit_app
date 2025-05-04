@@ -163,9 +163,8 @@ df = user_input_features()
 df
 
 X_test = full_pipeline.transform(df)
-X_test
+print(X_test)
 y_pred = model.predict(X_test)
-y_pred
 st.header('Your dream house would cost approximately:')
 st.write(final_predictions)
 st.write('---')
