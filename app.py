@@ -157,7 +157,7 @@ def user_input_features():
             'median_income':median_income,
             'ocean_proximity':ocean_proximity
            }
-    return pd.DataFrame(data, index=[0])
+    return pd.DataFrame(data)
 
 
 df = user_input_features()
