@@ -90,3 +90,18 @@ fig = px.scatter_map(housing,
                      size="population", # Size of markers based on population
                      )
 st.plotly_chart(fig, use_container_width=True)
+
+fig = px.scatter_mapbox(housing, lat='latitude',
+                        lon='longitude',
+                        hover_data = ['housing_median_age', 'total_rooms', 'total_bedrooms',
+                                     'population','households','median_income','median_house_value'],
+                        color = housing['median_house_value'],
+                        color_continous_scale=px.colors.sequential.Agsunset,
+                        size=housing["population"]/1e5,
+                        zoom=4, height=500)
+fig.update_layout(mapbox_style="open-street-map")
+fig.update_layout(margin={"r":0, "t":0,"l":0,"b":0)
+
+st.plotly_chart(fig,use_container_width=True)
+
+                        
