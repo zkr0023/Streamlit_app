@@ -8,8 +8,8 @@ st.write('---')
 
 import pandas as pd
 
-df = pd.read_csv('housing.csv')
-df
+housing = pd.read_csv('housing.csv')
+housing
 
 X = housing.drop('median_house_value', axis=1)
 y = housing['median_house_value']
