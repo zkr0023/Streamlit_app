@@ -4,6 +4,7 @@ import sklearn
 import joblib
 from sklearn.model_selection import train_test_split
 import numpy as np
+import plotly.express as px
 
 st.header('California App Predictions')
 st.write("""
@@ -81,3 +82,13 @@ full_pipeline.fit(X_train)
 
 model = joblib.load("Decision_tree_regressor.joblib")
 
+
+
+fig = px.scatter_geo(housing, 
+                     lat="latitude", 
+                     lon="longitude", 
+                     size=housing["Population"]/1e5, # Size of markers based on population
+                     hover_name=['housing_median_age'], # Display city name on hover
+                     projection="natural earth", # Map projection
+                     title="City Populations")
+fig.show()
