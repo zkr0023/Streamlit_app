@@ -1,3 +1,9 @@
+import streamlit as st
+import pandas as pd
+import sklearn
+from sklearn.model_selection import train_test_split
+
+
 st.header('California App Predictions')
 st.write("""
 This app predicts the **California House Price**!
