@@ -134,7 +134,7 @@ def user_input_features():
                                   float(housing.population.max()),
                                   float(housing.population.mean()))
     
-    apple = st.sidebar.slider("households:",
+    households = st.sidebar.slider("households:",
                                   float(housing.households.min()),
                                   float(housing.households.max()),
                                   float(housing.households.mean()))
@@ -153,7 +153,7 @@ def user_input_features():
             'total_rooms':total_rooms,
             'total_bedrooms':total_bedrooms,
             'population':population,
-            'households':apple,
+            'households':households,
             'median_income':median_income,
             'ocean_proximity':ocean_proximity
            }
