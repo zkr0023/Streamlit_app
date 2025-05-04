@@ -84,11 +84,9 @@ model = joblib.load("Decision_tree_regressor.joblib")
 
 
 
-fig = px.scatter_geo(housing, 
+fig = px.scatter_map(housing, 
                      lat="latitude", 
                      lon="longitude", 
                      size="population", # Size of markers based on population
-                     hover_name=['housing_median_age'], # Display city name on hover
-                     projection="natural earth", # Map projection
-                     title="City Populations")
+                     )
 fig.show()
