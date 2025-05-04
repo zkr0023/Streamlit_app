@@ -96,7 +96,7 @@ fig = px.scatter_mapbox(housing, lat='latitude',
                         hover_data = ['housing_median_age', 'total_rooms', 'total_bedrooms',
                                      'population','households','median_income','median_house_value'],
                         color = housing['median_house_value'],
-                        color_continous_scale=px.colors.sequential.Agsunset,
+                        color_continuous_scale=px.colors.sequential.Agsunset,
                         size=housing["population"]/1e5,
                         zoom=4, height=500)
 fig.update_layout(mapbox_style="open-street-map")
