@@ -89,4 +89,4 @@ fig = px.scatter_map(housing,
                      lon="longitude", 
                      size="population", # Size of markers based on population
                      )
-fig.show()
+st.plotly_chart(fig, use_container_width=True)
