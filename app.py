@@ -3,7 +3,7 @@ import pandas as pd
 import sklearn
 import joblib
 from sklearn.model_selection import train_test_split
-
+import numpy as np
 
 st.header('California App Predictions')
 st.write("""
