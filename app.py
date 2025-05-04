@@ -148,7 +148,7 @@ def user_input_features():
 
     data = {'longitude':longitude,
             'latitude':latitude,
-            'housin_median_age':housing_median_age,
+            'housing_median_age':housing_median_age,
             'total_rooms':total_rooms,
             'total_bedrooms':total_bedrooms,
             'population':population,
