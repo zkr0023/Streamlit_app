@@ -104,4 +104,61 @@ fig.update_layout(margin={"r":0, "t":0,"l":0,"b":0})
 
 st.plotly_chart(fig,use_container_width=True)
 
-                        
+
+def user_input_features():
+    longitude = st.sidebar.slider("longitude:",
+                                  float(housing.longitude.min()),
+                                  float(housing.longitude.max()),
+                                  float(housing.longitude.mean()))
+    
+    latitude = st.sidebar.slider("latitude:",
+                                  float(housing.latitude.min()),
+                                  float(housing.latitude.max()),
+                                  float(housing.latitude.mean()))
+    
+    housing_median_age = st.sidebar.slider("housing_median_age:",
+                                  float(housing.housing_median_age.min()),
+                                  float(housing.housing_median_age.max()),
+                                  float(housing.housing_median_age.mean()))
+
+    total_rooms = st.sidebar.slider("total_rooms:",
+                                  float(housing.total_rooms.min()),
+                                  float(housing.total_rooms.max()),
+                                  float(housing.total_rooms.mean()))
+    total_bedrooms = st.sidebar.slider("total_bedrooms:",
+                                  float(housing.total_bedrooms.min()),
+                                  float(housing.total_bedrooms.max()),
+                                  float(housing.total_bedrooms.mean()))
+    population = st.sidebar.slider("population:",
+                                  float(housing.population.min()),
+                                  float(housing.population.max()),
+                                  float(housing.population.mean()))
+    
+    households = st.sidebar.slider("households:",
+                                  float(housing.households.min()),
+                                  float(housing.households.max()),
+                                  float(housing.households.mean()))
+    
+    median_income = st.sidebar.slider("median_income:",
+                                  float(housing.median_income.min()),
+                                  float(housing.median_income.max()),
+                                  float(housing.median_income.mean()))
+    
+    ocean_proximity = st.sidebar.selectbox("Location of the house w.r.t. ocean/sea:",
+                                          ('ISLAND','NEAR BAY', '<1H OCEAN', 'INLAND', 'NEAR OCEAN'))
+
+    data = {'longitude':longitude,
+            'latitude':latitude,
+            'housin_median_age':housing_median_age,
+            'total_rooms':total_rooms,
+            'total_bedrooms':total_bedrooms,
+            'population':population,
+            'households':household,
+            'median_income':median_income,
+            'ocean_proximity':ocean_proximity
+           }
+    return pd.DataFrame(data)
+
+
+df = user_input_features()
+df
